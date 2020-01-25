@@ -5,7 +5,8 @@ This is our project for Tactio, #ConUHacks 2020
 # Documentation
 
  API
- https://app.swaggerhub.com/search
+ https://app.swaggerhub.com/apis/TactioHealth/tactio-clinician-api/1.1.5#/
 
  Login: CaraBinary@mailinator.com
+
  Password: CaraBinary
