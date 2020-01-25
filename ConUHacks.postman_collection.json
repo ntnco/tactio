@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "24a00aee-ae21-42a1-b69f-49bd0796df7b",
+		"name": "ConUHacks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "f3030107nb689n4eb6n834dn1c96a4b6c3c4",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "8a3d11dcn9477n4264n826dn0a6be1cd14ac",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "conuhacks@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "2kX7Uucd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sandbox030.tactiorpm7000.com/token.php",
+					"protocol": "https",
+					"host": [
+						"sandbox030",
+						"tactiorpm7000",
+						"com"
+					],
+					"path": [
+						"token.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Observations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 1e3b2c1ea6cd4e2b3fbb2ae236fcfafde9da5f66"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "75dfab8b42274f6eb7f0684227d1acba",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "aa68eca654a94dbea68892a22a7361ac",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "Adminsami",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sandbox030.tactiorpm7000.com/tactio_patient_restful_api.php/1.1.5/Observation?subject=77ce0a32-3d4a-11ea-b585-000d3af3ac45",
+					"protocol": "https",
+					"host": [
+						"sandbox030",
+						"tactiorpm7000",
+						"com"
+					],
+					"path": [
+						"tactio_patient_restful_api.php",
+						"1.1.5",
+						"Observation"
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "77ce0a32-3d4a-11ea-b585-000d3af3ac45"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
