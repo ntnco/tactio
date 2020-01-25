@@ -12,6 +12,6 @@ This is our project for Tactio, #ConUHacks 2020
  Password: CaraBinary
 
 
-Page demo:
+# Page médecin (exemple par Tactio)
 
 https://sandbox031.tactiorpm7000.com/index.php
