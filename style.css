@@ -13,6 +13,10 @@ header {
 
 }
 
+input [type=checkbox]{
+    text-align: center;
+}
+
 header img {
     float: none;
     width: 140px;
@@ -22,6 +26,10 @@ header img {
 
 button {
     font: 'Montserrat', sans-serif;
+}
+
+.btn-info{
+    background-color: #5085A5;
 }
 
 .card {
