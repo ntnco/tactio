@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 $(document).ready(function() {
 
     
@@ -14,7 +9,8 @@ $(document).ready(function() {
         success: function(result) { 
             let rawInfos = getArray(result);
             let neatInfos = neatify(rawInfos);
-            
+            console.log(neatInfos.bloodPressure);
+            console.log(neatInfos.heartRate);
         },
         error: function(jqxhr, status, exception) {
             console.log(exception);
@@ -30,32 +26,36 @@ function neatify(raw) {
         mesureBPM = {}, //  {"date": int } 
         tensions = [],
         obsBloodPressure = [],
-        date = "", // String
+        obsBPM = [],
+        date, // String
         systolic, // int
         diastolic,
         heartRate; // int
     //let heartRates = [];
     for (var i = 0; i < raw.length; i++) {
         resource = raw[i].resource;
+        date = resource.effectiveDateTime;
         if (resource.code.coding[0].display == "Blood Pressure") {
-            date = resource.effectivedateTime;
             systolic = resource.component[0].valueQuantity.value;
             diastolic = resource.component[1].valueQuantity.value;
             mesureTension = {};
             mesureTension[date] = [ systolic, diastolic ];
             obsBloodPressure.push(mesureTension);
-
-        } else if (resource.code.coding[0].display == "Heart Rate") {
-            date = resource.effectivedateTime;
+        } else if (resource.code.coding[0].display == "Heart rate") {
             heartRate = resource.valueQuantity.value;
             mesureBPM = {};
             mesureBPM[date] = heartRate;
-            obsBloodPressure.push(mesureBPM);
+            obsBPM.push(mesureBPM);
         }
     }
 
-    console.log(obsBloodPressure);
-    console.log(mesureBPM);
+    let observations = {
+        bloodPressure: obsBloodPressure,
+        heartRate: obsBPM
+    }
+
+    return observations;
+
 }
 
 
