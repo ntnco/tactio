@@ -96,14 +96,15 @@
                             <br>
                             <p>Heart Rate</p>
                             <input type="checkbox"  
-                                   name="check-toggle2"
+                                   id="check-toggle2"
                                    checked data-toggle="toggle"
                                            data-on="Heart Rate" 
                                            data-off="Blood Pressure"
                                            data-onstyle="info" 
                                            data-offstyle="default"
                                            data-width="200" 
-                                           data-height="40">
+                                           data-height="40"
+                                           onchange="valueChanged()">
                             <canvas id="myChart3" width="400" height="200"></canvas>
                         </div>
                         <div class="card-body">

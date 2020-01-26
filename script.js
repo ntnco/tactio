@@ -6,6 +6,11 @@ $(document).ready(function() {
         set1b = [],
         set1c = [];
 
+        let tags1 = [],
+        set2a = [],
+        set2b = [],
+        set2c = [];
+
     let affichage = "pressure"; // as opposed to pressure
 
     // Document.getElementById("toggle");
@@ -32,7 +37,12 @@ $(document).ready(function() {
             console.log(exception);
         }
 
-        /*url : 'curl2.php',
+    });
+
+    $.ajax({
+        url : 'curl.php',
+        type: "GET",
+        data: {"subject" : '52846a82-3d63-11ea-b585-000d3af3ac45'},
         success: function(result) { 
             let rawInfos = getArray(result),
                 neatInfos = neatify(rawInfos);
@@ -40,18 +50,20 @@ $(document).ready(function() {
             //console.log(neatInfos.heartRate);
 
             for (var i = 0; i < 26; i++) {
-                tags.push(i);
-                set4.push(Object.values(neatInfos.heartRate[i])[0]);
-                set5.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
-                set6.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
+                tags1.push(i);
+                set2a.push(Object.values(neatInfos.heartRate[i])[0]);
+                set2b.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
+                set2c.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
             }
         },
 
         error: function(jqxhr, status, exception) {
             console.log(exception);
-        }*/
+        }
 
     });
+
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -95,6 +107,64 @@ $(document).ready(function() {
                 fill: true,
                 borderColor: 'rgba(49, 112, 142, 1)',
                 data: set1c,
+                borderWidth: 1
+            }    
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: tags1,
+            datasets: [{
+                label: 'BPM',
+                lineTension: 0,
+                fill: true,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set2a,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    var ctx = document.getElementById('myChart4').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: tags1,
+            datasets: [{
+                label: '',
+                lineTension: 0,
+                fill: false,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set2b,
+                borderWidth: 1
+            }, {
+                label: '',
+                lineTension: 0,
+                fill: true,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set2c,
                 borderWidth: 1
             }    
             ]
@@ -174,6 +244,11 @@ function valueChanged()
         $("#myChart").hide();
     else
         $("#myChart").show();
+
+    if($('#check-toggle2').prop('checked'))
+        $("#myChart3").hide();
+    else
+        $("#myChart3").show();
 }
 
 
