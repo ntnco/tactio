@@ -12,6 +12,8 @@ $(document).ready(function() {
     
     $.ajax({
         url : 'curl.php',
+        type: "GET",
+        data: {"subject" : '517d8e98-3d63-11ea-b585-000d3af3ac45'},
         success: function(result) { 
             let rawInfos = getArray(result),
                 neatInfos = neatify(rawInfos);

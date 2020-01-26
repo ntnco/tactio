@@ -1,9 +1,12 @@
 <?php
 
+$subject = $_GET['subject'];
+$url = 'https://sandbox030.tactiorpm7000.com/tactio_clinical_restful_api.php/1.1.5/Observation?subject='.$subject;
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://sandbox030.tactiorpm7000.com/tactio_clinical_restful_api.php/1.1.5/Observation?subject=517d8e98-3d63-11ea-b585-000d3af3ac45",
+  CURLOPT_URL => $url,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
