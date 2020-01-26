@@ -1,15 +1,22 @@
 
 
 $(document).ready(function() {
-    let tags = ["Jan 4th", "Jan 11th", "Jan 18th", "Jan 25th"];
+    let tags = [],
+        set = [];
+
+    // Document.getElementById("toggle");
+    
     $.ajax({
         url : 'curl.php',
         success: function(result) { 
             let rawInfos = getArray(result),
                 neatInfos = neatify(rawInfos);
-            //data.labels = ["tiger", "elephant", "koala"];
-            console.log(neatInfos.bloodPressure);
-            console.log(neatInfos.heartRate);
+            //console.log(neatInfos.bloodPressure);
+            //console.log(neatInfos.heartRate);
+            for (var i = 0; i < 26; i++) {
+                tags.push(i);
+                set.push(Object.values(neatInfos.heartRate[i])[0]);
+            }
         },
         error: function(jqxhr, status, exception) {
             console.log(exception);
@@ -22,23 +29,10 @@ $(document).ready(function() {
             labels: tags,
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                lineTension: 0,
+                fill: true,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set,
                 borderWidth: 1
             }]
         },
