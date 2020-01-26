@@ -68,6 +68,11 @@ var myChart = new Chart(ctx, {
             }]
         }
     }
+
+    function alternatePointStyles(ctx) {
+        var index = ctx.dataIndex;
+        return index % 2 === 0 ? 'circle' : 'rect';
+    }
 });
 </script>
           </div>
