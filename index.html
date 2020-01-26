@@ -1,104 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Test</title>
-    <meta charset="utf-8">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Gelasio|Montserrat&display=swap');
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <style>
+@import url('https://fonts.googleapis.com/css?family=Gelasio|Montserrat&display=swap');
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
-          rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-</head>
-<body>
-<header>
-    Essential
-</header>
-<maim>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+              rel="stylesheet">
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    </head>
+    <body>
+        <header>
+            Essential
+        </header>
+        <maim>
 
-    <div class="container">
+        <div class="container">
 
-        <div class="accordion" class="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button"
-                                data-toggle="collapse"
-                                data-target="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
-                            Patient 1
-                        </button>
-                    </h5>
-                </div>
-
-                <div class="collapse hide" id="collapseOne"
-                     aria-labelledby="headingOne"
-                     data-parent="#accordionExample">
-                    <div class="card-body">
-                        Name :<br>
-                        <p>Heart Rate</p>
-                        <input type="checkbox" checked data-toggle="toggle"
-                               data-on="Heart Rate" data-off="Blood Pressure"
-                               data-onstyle="info" data-offstyle="default"
-                               data-width="200" data-height="40">
-                        <canvas id="myChart" width="400" height="200"></canvas>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne1" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne1">
+                                Patient 1
+                            </button>
+                        </h5>
                     </div>
-                    <div class="card-body">
-                        <p>Blood pressure</p>
-                        <canvas id="myChart2" width="400" height="200"></canvas>
+
+                    <div class="collapse hide collapseOne1"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart2" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne2" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne2">
+                                Patient 2
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne2"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart3" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart4" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne3" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne3">
+                                Patient 3
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne3"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart5" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart6" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne4" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne4">
+                                Patient 4
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne4"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart7" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart8" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne5" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne5">
+                                Patient 5
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne5"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart9" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart10" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne6" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne6">
+                                Patient 6
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne6"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart11" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart12" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne7" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne7">
+                                Patient 7
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne7"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart13" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart14" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" 
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target=".collapseOne8" 
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne8">
+                                Patient 8
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div class="collapse hide collapseOne8"
+                         aria-labelledby="headingOne"
+                         data-parent=".accordion">
+                        <div class="card-body">
+                            Name :<br>
+                            <p>Heart Rate</p>
+                            <input type="checkbox" 
+                                   checked data-toggle="toggle"
+                                           data-on="Heart Rate" 
+                                           data-off="Blood Pressure"
+                                           data-onstyle="info" 
+                                           data-offstyle="default"
+                                           data-width="200" 
+                                           data-height="40">
+                            <canvas id="myChart15" width="400" height="200"></canvas>
+                        </div>
+                        <div class="card-body">
+                            <p>Blood pressure</p>
+                            <canvas id="myChart16" width="400" height="200"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="accordion" class="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne2">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button"
-                                data-toggle="collapse"
-                                data-target="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
-                            Patient 2
-                        </button>
-                    </h5>
-                </div>
 
-                <div id="collapseTwo" class="collapse hide"
-                     aria-labelledby="headingOne2"
-                     data-parent="#accordionExample2">
-                    <div class="card-body">
-                        Name :
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+        </main>
+        <footer>
+        </footer>
 
-
-    </div>
-    </main>
-    <footer>
-    </footer>
-
-</body>
+    </body>
 </html>
