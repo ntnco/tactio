@@ -1,3 +1,14 @@
 #accordionExample{
     text-align: center;
 }
+
+header {
+    font: 'Montserrat', sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    color: #5085A5;
+    text-align: center;
+
+}
