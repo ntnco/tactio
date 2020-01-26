@@ -13,6 +13,13 @@ header {
 
 }
 
+header img {
+    float: none;
+    width: 140px;
+    height: 180px;
+    padding-right: 10px;
+}
+
 button {
     font: 'Montserrat', sans-serif;
 }
