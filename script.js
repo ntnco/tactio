@@ -2,7 +2,11 @@
 
 $(document).ready(function() {
     let tags = [],
-        set = [];
+        set = [],
+        set2 = [],
+        set3 = [];
+
+    let affichage = "pressure"; // as opposed to pressure
 
     // Document.getElementById("toggle");
     
@@ -13,11 +17,15 @@ $(document).ready(function() {
                 neatInfos = neatify(rawInfos);
             //console.log(neatInfos.bloodPressure);
             //console.log(neatInfos.heartRate);
+
             for (var i = 0; i < 26; i++) {
                 tags.push(i);
                 set.push(Object.values(neatInfos.heartRate[i])[0]);
+                set2.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
+                set3.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
             }
         },
+
         error: function(jqxhr, status, exception) {
             console.log(exception);
         }
@@ -28,13 +36,47 @@ $(document).ready(function() {
         data: {
             labels: tags,
             datasets: [{
-                label: '# of Votes',
+                label: 'BPM',
                 lineTension: 0,
                 fill: true,
                 borderColor: 'rgba(49, 112, 142, 1)',
                 data: set,
                 borderWidth: 1
             }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    // don't forget to put back myChart2
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: tags,
+            datasets: [{
+                label: '',
+                lineTension: 0,
+                fill: false,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set2,
+                borderWidth: 1
+            }, {
+                label: '',
+                lineTension: 0,
+                fill: true,
+                borderColor: 'rgba(49, 112, 142, 1)',
+                data: set3,
+                borderWidth: 1
+            }    
+            ]
         },
         options: {
             scales: {
