@@ -12,3 +12,30 @@ header {
     text-align: center;
 
 }
+
+button {
+    font: 'Montserrat', sans-serif;
+}
+
+.card {
+    background-color: #e1eef7;
+}
+
+.btn {
+    font-size: 20px;
+    color: black;
+}
+
+.btn-link:hover {
+    color: #5085A5;
+    text-decoration: none;
+}
+
+.card-body {
+    background-color: white;
+}
+
+p {
+    font-size: 17px;
+    color: #2b79ae;
+}
