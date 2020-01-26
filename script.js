@@ -2,9 +2,9 @@
 
 $(document).ready(function() {
     let tags = [],
-        set = [],
-        set2 = [],
-        set3 = [];
+        set1a = [],
+        set1b = [],
+        set1c = [];
 
     let affichage = "pressure"; // as opposed to pressure
 
@@ -20,15 +20,35 @@ $(document).ready(function() {
 
             for (var i = 0; i < 26; i++) {
                 tags.push(i);
-                set.push(Object.values(neatInfos.heartRate[i])[0]);
-                set2.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
-                set3.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
+                set1a.push(Object.values(neatInfos.heartRate[i])[0]);
+                set1b.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
+                set1c.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
             }
         },
 
         error: function(jqxhr, status, exception) {
             console.log(exception);
         }
+
+        /*url : 'curl2.php',
+        success: function(result) { 
+            let rawInfos = getArray(result),
+                neatInfos = neatify(rawInfos);
+            //console.log(neatInfos.bloodPressure);
+            //console.log(neatInfos.heartRate);
+
+            for (var i = 0; i < 26; i++) {
+                tags.push(i);
+                set4.push(Object.values(neatInfos.heartRate[i])[0]);
+                set5.push(Object.values(neatInfos.bloodPressure[i])[0][0]);
+                set6.push(Object.values(neatInfos.bloodPressure[i])[0][1]);
+            }
+        },
+
+        error: function(jqxhr, status, exception) {
+            console.log(exception);
+        }*/
+
     });
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -40,7 +60,7 @@ $(document).ready(function() {
                 lineTension: 0,
                 fill: true,
                 borderColor: 'rgba(49, 112, 142, 1)',
-                data: set,
+                data: set1a,
                 borderWidth: 1
             }]
         },
@@ -55,7 +75,6 @@ $(document).ready(function() {
         }
     });
 
-    // don't forget to put back myChart2
     var ctx = document.getElementById('myChart2').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -66,14 +85,14 @@ $(document).ready(function() {
                 lineTension: 0,
                 fill: false,
                 borderColor: 'rgba(49, 112, 142, 1)',
-                data: set2,
+                data: set1b,
                 borderWidth: 1
             }, {
                 label: '',
                 lineTension: 0,
                 fill: true,
                 borderColor: 'rgba(49, 112, 142, 1)',
-                data: set3,
+                data: set1c,
                 borderWidth: 1
             }    
             ]
@@ -150,7 +169,14 @@ function numAverage(a) {
 function valueChanged()
 {
     if($('.check-toggle1').is(":checked"))
-        $(".myChart1").hide();
+        $("#myChart").hide();
     else
-        $(".myChart1").show();
+        $("#myChart").show();
 }
+
+
+
+/////////////////////
+//everything below this line is amazing
+//-ly immoral 
+////////////////////

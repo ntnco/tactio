@@ -43,8 +43,7 @@
                                     data-toggle="collapse"
                                     data-target=".collapseOne1" 
                                     aria-expanded="true"
-                                    aria-controls="collapseOne1"
-                                    onchange="valueChanged()">
+                                    aria-controls="collapseOne1">
                                 Patient 1
                             </button>
                         </h5>
@@ -64,7 +63,8 @@
                                            data-onstyle="info" 
                                            data-offstyle="default"
                                            data-width="200" 
-                                           data-height="40">
+                                           data-height="40"
+                                           onchange="valueChanged()">
                             <canvas id="myChart" width="400" height="200"></canvas>
                         </div>
                         <div class="card-body">
