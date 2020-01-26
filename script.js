@@ -145,3 +145,12 @@ function numAverage(a) {
     }
     return c/b;
 }
+
+
+function valueChanged()
+{
+    if($('.check-toggle1').is(":checked"))
+        $(".myChart1").hide();
+    else
+        $(".myChart1").show();
+}
