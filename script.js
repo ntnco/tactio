@@ -170,7 +170,7 @@ function numAverage(a) {
 
 function valueChanged()
 {
-    if($('.check-toggle1').is(":checked"))
+    if($('#check-toggle1').prop('checked'))
         $("#myChart").hide();
     else
         $("#myChart").show();
